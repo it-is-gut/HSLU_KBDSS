@@ -1,0 +1,64 @@
+# Eigenes Model Trainieren
+import gensim
+from nltk.corpus import brown 
+model = gensim.models.Word2Vec(brown.sents())
+
+model.save('brown.embedding') 
+model = gensim.models.Word2Vec.load('brown.embedding')
+
+
+# Bestehendes Model Laden
+import gensim
+import numpy
+
+from nltk.data import find
+word2vec_sample = str(find('models/word2vec_sample/pruned.word2vec.txt'))
+model = gensim.models.KeyedVectors.load_word2vec_format(word2vec_sample, binary=False)
+
+
+# Rohe Vektorwerte für spezifische Wörter
+model['dog']
+
+
+# Anzahl Wörter im Vokabular
+len(model.vocab)
+
+
+# Anzahl Dimensionen/Features
+len(model['dog'])
+
+
+# Top 5 ähnliche Begriffe
+model.wv.most_similar('dog', topn = 5)
+
+# ODER
+model.wv.similar_by_word('dog')
+
+
+# Vektoren Addition / Subtraktion
+model.wv.most_similar(positive=['woman', 'king'], negative=['man'], topn=1)
+
+
+# Ähnlichkeit zwischen 2 Wörtern
+model.wv.similarity('woman', 'man')
+
+
+# Welches Wort passt nicht
+model.wv.doesnt_match('dog cat horse apple'.split())
+
+
+# Ähnlichkeit von Sätzen messen // Benötigt pyemd
+text1 = 'Dogs love to chase cats'.lower().split()
+text2 = 'Cats hate to be chased by dogs'.lower().split()
+similarity = model.wv.wmdistance(text1, text2)
+print (similarity)
+
+
+# Distanz zwischen 2 Vektoren
+distance = model.distance('woman', 'queen')
+print (distance)
+
+
+# Ähnlichkeit zwischen Wortkombinationen
+sim = model.n_similarity(['woman', 'queen'], ['man', 'king'])
+print(sim)

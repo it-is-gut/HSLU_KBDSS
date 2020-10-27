@@ -8,6 +8,14 @@ verify_ssl = true
 [packages]
 nltk = "*"
 numpy = "*"
+jupyter = "*"
+notebook = "*"
+pandas = "*"
+sklearn = "*"
+itertools = "*"
+gensim = "*"
+matplotlib = "*"
+seaborn = "*"
 
 [requires]
 python_version = "3.7"
