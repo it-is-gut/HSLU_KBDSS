@@ -16,6 +16,7 @@ itertools = "*"
 gensim = "*"
 matplotlib = "*"
 seaborn = "*"
+pyemd = "*"
 
 [requires]
 python_version = "3.7"
