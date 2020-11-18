@@ -1,0 +1,20 @@
+network "ELISA Example" {
+// written by aGrUM 0.18.0
+}
+
+variable HIV {
+   type discrete[2] {0, 1};
+}
+
+variable ELISA {
+   type discrete[2] {0, 1};
+}
+
+probability (HIV) {
+   default 0.995 0.005;
+}
+probability (ELISA | HIV) {
+   (0) 0.98 0.02;
+   (1) 0.01 0.99;
+}
+

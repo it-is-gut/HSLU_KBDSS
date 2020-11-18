@@ -17,6 +17,9 @@ gensim = "*"
 matplotlib = "*"
 seaborn = "*"
 pyemd = "*"
+graphviz = "*"
+pyagrum = "*"
+pydotplus = "*"
 
 [requires]
 python_version = "3.7"
