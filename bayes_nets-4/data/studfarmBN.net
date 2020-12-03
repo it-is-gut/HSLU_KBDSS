@@ -1,0 +1,169 @@
+net 
+{
+    node_size = (76 36);
+}
+
+node A1
+{
+    label = "A1";
+    position = (155 338);
+    states = ("AA"  "Aa");
+}
+
+node Ann
+{
+    label = "Ann";
+    position = (249 338);
+    states = ("AA"  "Aa");
+}
+
+node Alan
+{
+    label = "Alan";
+    position = (353 340);
+    states = ("AA"  "Aa");
+}
+
+node Alice
+{
+    label = "Alice";
+    position = (454 336);
+    states = ("AA"  "Aa");
+}
+
+node A2
+{
+    label = "A2";
+    position = (538 336);
+    states = ("AA"  "Aa");
+}
+
+node Bill
+{
+    label = "Bill";
+    position = (211 242);
+    states = ("AA"  "Aa");
+}
+
+node Betsy
+{
+    label = "Betsy";
+    position = (307 240);
+    states = ("AA"  "Aa");
+}
+
+node Benny
+{
+    label = "Benny";
+    position = (411 242);
+    states = ("AA"  "Aa");
+}
+
+node Bonnie
+{
+    label = "Bonnie";
+    position = (520 236);
+    states = ("AA"  "Aa");
+}
+
+node Carl
+{
+    label = "Carl";
+    position = (260 108);
+    states = ("AA"  "Aa");
+}
+
+node Cecily
+{
+    label = "Cecily";
+    position = (441 93);
+    states = ("AA"  "Aa");
+}
+
+node Dennis
+{
+    label = "Dennis";
+    position = (360 -15);
+    states = ("AA"  "Aa"  "aa");
+}
+
+potential (A1 |)
+{
+    data = (0.99000000 0.01000000);
+}
+
+potential (Ann |)
+{
+    data = (0.99000000 0.01000000);
+}
+
+potential (Alan |)
+{
+    data = (0.99000000 0.01000000);
+}
+
+potential (Alice |)
+{
+    data = (0.99000000 0.01000000);
+}
+
+potential (A2 |)
+{
+    data = (0.99000000 0.01000000);
+}
+
+potential (Bill | A1 Ann)
+{
+    data = (((1.00000000 0.00000000)
+        (0.50000000 0.50000000))
+        ((0.50000000 0.50000000)
+        (0.33000000 0.67000000)));
+}
+
+potential (Betsy | Ann Alan)
+{
+    data = (((1.00000000 0.00000000)
+        (0.50000000 0.50000000))
+        ((0.50000000 0.50000000)
+        (0.33000000 0.67000000)));
+}
+
+potential (Benny | Alan Alice)
+{
+    data = (((1.00000000 0.00000000)
+        (0.50000000 0.50000000))
+        ((0.50000000 0.50000000)
+        (0.33000000 0.67000000)));
+}
+
+potential (Bonnie | A2 Ann)
+{
+    data = (((1.00000000 0.00000000)
+        (0.50000000 0.50000000))
+        ((0.50000000 0.50000000)
+        (0.33000000 0.67000000)));
+}
+
+potential (Carl | Bill Betsy)
+{
+    data = (((1.00000000 0.00000000)
+        (0.50000000 0.50000000))
+        ((0.50000000 0.50000000)
+        (0.33000000 0.67000000)));
+}
+
+potential (Cecily | Benny Bonnie)
+{
+    data = (((1.00000000 0.00000000)
+        (0.50000000 0.50000000))
+        ((0.50000000 0.50000000)
+        (0.33000000 0.67000000)));
+}
+
+potential (Dennis | Carl Cecily)
+{
+    data = (((1.00000000 0.00000000 0.00000000)
+        (0.50000000 0.50000000 0.00000000))
+        ((0.50000000 0.50000000 0.00000000)
+        (0.25000000 0.50000000 0.25000000)));
+}
